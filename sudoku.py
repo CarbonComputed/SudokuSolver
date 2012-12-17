@@ -1,6 +1,6 @@
 """
 Kevin Carbone
-Purpose:  A backtracking solver for the Skyscraper puzzle.
+Purpose:  A backtracking solver for the Sudoku puzzle.
 Language: Python 3
 """
 
@@ -11,7 +11,7 @@ from math import *
 
 class SudokuConfig:
     """
-    A class that represents a skyscraper configuration.
+    A class that represents a sudoku configuration.
         DIM - square board DIMension (int)
 
     """
