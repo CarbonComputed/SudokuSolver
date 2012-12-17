@@ -33,10 +33,10 @@ class SudokuConfig:
         """
         Return a string representation of the config.
         """
-        
+        root = int(sqrt(self.DIM))
         # top row
-        result = '  '
-        result += '\n  ' + '-' * (self.DIM*2-1) + '\n'
+        result = ''
+        result += '\n' + '-' * (self.DIM*2+3) + '\n'
             
         # board rows
         for row in range(self.DIM):
@@ -47,11 +47,14 @@ class SudokuConfig:
                 else:
                     result += str(str(self.board[row][col]))
                 if col != self.DIM-1: result += ' '
-            result += '|' + '\n'
+                if (col + 1) % root == 0: result += '|'
+            result += '\n'
+            if (row +1) % root == 0: result +=   "-" * (self.DIM*2+3) + '\n'
+
             
         # bottom row
-        result += '  ' + '-' * (self.DIM*2-1) + '\n'
-        result += '  '
+        #result += '  ' + '-' * (self.DIM*2-1) + '\n'
+        #result += '  '
 
         result += '\n'
                   
