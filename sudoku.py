@@ -113,16 +113,14 @@ def getSuccessors(config):
     for row in range (1,config.DIM+1):
         newConfig = deepcopy(config)
         newConfig.board[candidate[0]][candidate[1]] = row
-        c = newConfig
-        successors.append(c)
+        successors.append(newConfig)
     return successors 
     
 
 
 
 def check_dups(lst):
-    nlst = copy(lst)
-    nlst = [value for value in nlst if value != 0]
+    nlst = [value for value in lst if value != 0]
     return len(nlst)!=len(set(nlst))
 
 def check_cols(config):
