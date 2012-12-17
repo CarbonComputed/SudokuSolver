@@ -84,7 +84,7 @@ def readBoard(filename):
 def isGoal(config):
     """
     Checks whether a config is a goal or not
-        config: The config (SkyscraperConfig)
+        config: The config (SudokuConfig)
     Returns: True if config is a goal, False otherwise
     """
     for row in range(config.DIM):
@@ -98,8 +98,8 @@ def isGoal(config):
 def getSuccessors(config):
     """
     Get the successors of config
-        config: The config (SkyscraperConfig)
-    Returns: A list of successor configs (list of SkyscraperConfig)
+        config: The config (SudokuConfig)
+    Returns: A list of successor configs (list of SudokuConfig)
     """
     candidate = None
     for row in range(config.DIM):
@@ -160,7 +160,7 @@ def check_squares(config):
 def isValid(config):
     """
     Checks the config to see if it is valid
-        config: The config (SkyscraperConfig)
+        config: The config (SudokuConfig)
     Returns: True if the config is valid, False otherwise
     """
 
@@ -170,9 +170,9 @@ def isValid(config):
 def solve(config, debug):
     """
     Generic backtracking solver.
-        config: the current config (SkyscraperConfig)
+        config: the current config (SudokuConfig)
         debug: print debug output? (Bool)
-    Returns:  A config (SkyscraperConfig), if valid, None otherwise
+    Returns:  A config (SudokuConfig), if valid, None otherwise
     """
     
     if isGoal(config):
@@ -206,7 +206,7 @@ def main():
         debug = eval(argv[2])
     # incorrect number of command line arguments
     else:
-        print("Usage: python3 skyscraper.py [filename debug]")
+        print("Usage: python3 sudoku.py [filename debug]")
         print("optional command line arguments:" )
         print("  filename: The name of the board file")
         print("  debug: True or False for debug output")
