@@ -18,7 +18,7 @@ class SudokuConfig:
     __slots__ = ('DIM', 'board')
     
     """The empty cell value"""
-    EMPTY = 0   # can be referenced anywhere as: SkyscraperConfig.EMPTY
+    EMPTY = 0   
     def __init__(self, DIM, board):
         """
         Constructor.
@@ -42,7 +42,7 @@ class SudokuConfig:
         for row in range(self.DIM):
             result +=  '|'
             for col in range(self.DIM):
-                if self.board[row][col] == SkyscraperConfig.EMPTY:
+                if self.board[row][col] == SudokuConfig.EMPTY:
                     result += '.'
                 else:
                     result += str(str(self.board[row][col]))
@@ -67,7 +67,7 @@ def readBoard(filename):
         ...
     
         filename: The file name (string)
-    Returns: A config (SkyscraperConfig) containing the board info from file
+    Returns: A config (SudokuConfig) containing the board info from file
     """
     
     f = open(filename)
