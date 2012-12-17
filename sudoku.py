@@ -8,11 +8,8 @@ from copy import *
 from sys import argv
 from math import *
 
-# STUDENTS ARE FREE TO ADD ADDITIONAL SLOTS TO THIS CLASS, BUT DO NOT CHANGE
-# ANY OF THE EXISTING SLOTS!!!!
 
-
-class SkyscraperConfig:
+class SudokuConfig:
     """
     A class that represents a skyscraper configuration.
         DIM - square board DIMension (int)
@@ -31,7 +28,6 @@ class SkyscraperConfig:
         self.board = board
         
         
-        # YOUR ARE FREE TO ADD ADDITIONAL FUNCTIONALITY HERE...
                     
     def __str__(self):
         """
@@ -81,7 +77,7 @@ def readBoard(filename):
         line = [int(val) for val in f.readline().split()]
         board.append(line)
     f.close()
-    return SkyscraperConfig(DIM,board)
+    return SudokuConfig(DIM,board)
 
 
 
@@ -98,7 +94,6 @@ def isGoal(config):
     if isValid(config):
         return True
     return False
-    # YOUR IMPLEMENTATION REPLACES THIS
     
 def getSuccessors(config):
     """
@@ -122,9 +117,7 @@ def getSuccessors(config):
         successors.append(c)
     return successors 
     
-    #find first unassigned cell
-    #create DIM new configs with that cell having 1 - DIM
-    # YOUR IMPLEMENTATION REPLACES THIS
+
 
 
 def check_dups(lst):
@@ -197,7 +190,7 @@ def solve(config, debug):
 def main():
     """
     The main program.
-        Usage: python3 skyscraper.py [filename debug]
+        Usage: python3 sudoku.py [filename debug]
             filename: The name of the board file
             debug: True or False for debug output
     """
